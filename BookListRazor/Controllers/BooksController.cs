@@ -23,12 +23,12 @@ namespace BookListRazor.Controllers
         }
 
         [HttpGet]
-        public async Task< IActionResult> GetAll()
+        public async Task<IActionResult> GetAll()
         {
             return Json(new { data = _db.Book.ToList() });
         }
         [HttpDelete]
-        public async Task< IActionResult> Delete(int id)
+        public async Task <IActionResult> Delete(int id)
         {
             var bookEntity = _db.Book.FirstOrDefault(m => m.Id == id);
             if(bookEntity == null)
